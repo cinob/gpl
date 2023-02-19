@@ -3,13 +3,13 @@
 import { execSync } from 'child_process'
 import fs from 'fs'
 
-const ignoreDir = ['source']
+const ignoreDirs = []
 
 function traverseDir(dirPath) {
   const files = fs.readdirSync(dirPath)
 
   if (files.includes('.git')) {
-    console.log(`当前目录: ${dirPath}`)
+    console.log(`Current Path: ${dirPath}`)
     const output = execSync('git pull', { cwd: dirPath })
     console.log(output.toString())
     return
@@ -24,7 +24,7 @@ function traverseDir(dirPath) {
     const filePath = `${dirPath}/${file}`
     const stat = fs.statSync(filePath)
 
-    if (stat.isDirectory() && !ignoreDir.includes(file))
+    if (stat.isDirectory() && !ignoreDirs.includes(file))
       traverseDir(filePath)
   }
 }
