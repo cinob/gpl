@@ -1,0 +1,12 @@
+{
+  "name": "gpl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "author": "cinob <cinob@foxmail.com> (https://github.com/cinob/)",
+  "bin": "./bin/cli.mjs",
+  "license": "MIT",
+  "scripts": {
+    "start": "node /bin/cli.mjs"
+  }
+}
