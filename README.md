@@ -11,7 +11,7 @@ git clone https://github.com/cinob/gpl.git
 
 Link
 ```
-npm link
+cd gpl && npm link
 ```
 
 Go anywhere and execute `gpl`
