@@ -10,8 +10,12 @@ function traverseDir(dirPath) {
 
   if (files.includes('.git')) {
     console.log(`Current Path: ${dirPath}`)
-    const output = execSync('git pull', { cwd: dirPath })
-    console.log(output.toString())
+    try {
+      const output = execSync('git pull', { cwd: dirPath })
+      console.log(output.toString())
+    } catch (error) {
+      console.log(error)
+    }
     return
   }
 
